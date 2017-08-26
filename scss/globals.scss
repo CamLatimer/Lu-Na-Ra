@@ -1,0 +1,51 @@
+
+
+// variables, colors, constants, etc.
+$siteFontColor: darken(gray, 25%);
+
+// mixins
+
+@mixin backgroundFull($url: '', $colorA: rgba(0, 220, 255, .8), $colorB: rgba(255, 0, 25, .9)) {
+  background:linear-gradient($colorA, $colorB ),  url($url);
+  background-size:cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  color:white;
+}
+
+html, body{
+font-family: 'Roboto', sans-serif;
+width: 100%;
+margin:0; padding:0;
+color:$siteFontColor;
+background: white;
+position: relative;
+}
+*{
+  margin:0; padding:0;
+}
+
+a{
+  color:black;text-decoration: none;
+}
+
+a:hover{
+
+}
+
+@keyframes linkTilt {
+
+}
+
+.siteTitle{
+  width:100%;
+  max-width: 400px;margin:auto;
+  text-align: center;
+}
+.siteTitle__title{
+  font-size:9rem;
+}
+//
+// #wpadminbar{
+//   display: none;
+// }
