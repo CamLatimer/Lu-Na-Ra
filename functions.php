@@ -15,7 +15,7 @@
   add_action('init', 'register_theme_menus');
 
 // add js and stylesheets
-  function lunara_styles(){    wp_enqueue_style( 'google_fonts','https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:400,500i' );
+  function lunara_styles(){    wp_enqueue_style( 'google_fonts','"https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700,900,900i" rel="stylesheet"' );
     wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
   }
   add_action('wp_enqueue_scripts', 'lunara_styles');
