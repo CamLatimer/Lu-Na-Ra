@@ -1,50 +1,54 @@
 
 nav{
   text-align: center;
-  background: white;
-  padding:1rem 0;
-  position: relative;
+  position: fixed;
+  top:0;
+  padding:.7rem 0;
   z-index:2;
-  margin-bottom:2rem;
+  width: 100%;
+  color:white;
+  background: rgba(0, 0, 0, .14);
 }
 .navMenuWide{
     display: none;
     text-align: left;
-    padding-left:.7rem;
   }
-  .navMenuWide li{
-    display: inline-block;
-  }
+.navMenuWide li{
+  display: inline-block;
+}
 .menuHolder{
   width: 100%;
   text-align: center;
-  position: absolute;
+  position: fixed;
   background: white;
   top:-100%;
+  height: 100%;
   opacity: 0;
   transition:top 1s, opacity 1s;
   z-index: 1;
+  color:black;
 }
 .showMenu{
-  opacity: 1;
-  top:4rem;
-  transition: opacity 1;
+    opacity: 1;
+    top:0;
+    padding-top:5rem;
+    transition: opacity 1;
 }
 .menuBtn{
   cursor: pointer;
   display: inline-block;
-  background: white;
+
   position: relative;
   text-align: center;
 }
 .menu-item{
   list-style-type: none;
-  margin: 0 0 1rem 0;
+  margin: .5rem 0 1.5rem 0;
   position: relative;
-  font-weight: bold;
+  letter-spacing: 8;
 }
 .menu-item a{
-  color:$siteFontColor;
+  // color:white;
 }
 .menuToggle{
   opacity: 1;
@@ -54,18 +58,79 @@ nav{
 .hideMenuToggle{
   opacity: 0;
 }
+.menu-item--portfolio{
+  position: relative;
+  cursor: pointer;
+  .sub-menu{
+  display: none;
+  }
+.sub-menu li{
+    width: 100%;
+    margin:.5rem 0;
+    a {
+      color:black;
+    }
+}
+  .show-sub-menu{
+    display: block;
+    top:41px;
+  }
+}
+
+.menu-item a:after{
+  display: block;
+  content: '';
+  border-bottom: 1px solid black;
+  width:40%;
+  margin: auto;
+  transform: scale(0);
+  transition: transform .5s;
+}
+.menu-item a:hover:after{
+  content: '';
+    margin-left: auto;
+    margin:auto;
+    transform: scale(1);
+}
+
 @media screen and (min-width: 640px){
+  .menuHolder{
+   top:-100%;
+  }
   .navMenuWide{
     display: block;
+    padding-left: .5rem;
   }
   .navMenuWide li{
     margin: 0 1rem 0 0;
+    font-size: .8rem;
+    line-height: 2;
+    a{
+      color: white;
+    }
   }
   .nav{
     text-align: left;
   }
   .menuBtn{
     display:none;
+  }
+  .sub-menu{
+    display: inline-block;
+    position: absolute;
+    top:2.3rem;
+    width: 170px;
+    margin: auto;
+    left: -15px;
+    display: none;
+    overflow: hidden;
+    background: white;
+    text-align: center;
+    padding:0 .5rem;
+  }
+  .menu-item a:hover:after{
+      width: 100%;
+      position: absolute;
   }
 
 }

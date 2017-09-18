@@ -1,4 +1,4 @@
-<html class="no-js" lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
   <body <?php body_class(); ?>>
     <nav>
         <h2 class="menuBtn">
-          <span class="">MENU</span>
+          <span class="">MENU &#9776;</span>
         </h2>
         <?php
             $topMenu = array(
@@ -22,6 +22,7 @@
             // adds menu to page: wp_nav_menu( default_options_array )
             wp_nav_menu($topMenu);
           ?>
+
     </nav>
     <div class="menuHolder">
     <?php
@@ -33,5 +34,4 @@
       // adds menu to page: wp_nav_menu( default_options_array )
       wp_nav_menu($smallScreenMenu);
      ?>
-
   </div>
