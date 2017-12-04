@@ -2,15 +2,16 @@ export default function menu($){
     $ = $;
 
     // show / hide menu on smaller screens
-    $('.menuBtn').click(function(){
+    $('.menuBtn').click(function(){ showHideMenu($(this)); });
 
-      let toggleText = $(this).html() === 'X' ? 'MENU ☰' : 'X';
-      $(this).html(toggleText);
+    function showHideMenu(menuBtn){
+      let toggleText = $(menuBtn).html() === 'X' ? 'MENU ☰' : 'X';
+      $(menuBtn).html(toggleText);
 
       $('.menuHolder').toggleClass('showMenu');
       $('.menuToggle').toggleClass('hideMenuToggle');
+    }
 
-    });
 
     // toggle portfolio sub-menu
     $('.menu-item--portfolio').click(function(e){
@@ -27,6 +28,18 @@ export default function menu($){
         $('.sub-menu').removeClass('show-sub-menu');
       }
 
+    })
+
+    // make sure menu has correct classes when window is resized
+    window.addEventListener('resize', function(){
+      if(window.matchMedia("(min-width: 640px)").matches){
+        if($('.menuHolder').hasClass('showMenu')){
+          $('.menuHolder').removeClass('showMenu')
+          let toggleText = $('.menuBtn').html() === 'X' ? 'MENU ☰' : 'X';
+          $('.menuBtn').html(toggleText);
+        }
+
+      }
     })
 
 

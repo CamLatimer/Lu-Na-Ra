@@ -1,6 +1,7 @@
+// import LL from 'vanilla-lazyload';
+
 export default function imgGallery($){
   $ = $; // so you don't have to write 'jQuery'
-
 
   // image galleries
   // lightbox and progress bar
@@ -12,7 +13,8 @@ export default function imgGallery($){
     does so by calculating the % of images loaded, then use the percentage as width of pg bar, then adds percentage of images loaded to pg bar width
   */
 
-    const galleryImgs = $('.gallery__img img');
+    // const galleryImgs = $('.gallery__img img');
+    const galleryImgs = $('img[data-src]');
     const numGalleryImgs = galleryImgs.length;
     let loadedImgs = 0;
 
@@ -44,6 +46,29 @@ export default function imgGallery($){
         })
 
       })
+
+      // expiremented with a lazy load library, wanted to check out loading images
+      // as elements are scrolled into view...
+      // $('img:not([src])').css({
+      //   // 'visibility': 'hidden'
+      // })
+      //
+      // const LazyLoad = new LL({
+      //   data_src: 'src',
+      //   // threshold: 600,
+      //   callback_load: function(img){
+      //
+      //     // $(img).addClass('imgLoaded');
+      //     $(img).css({
+      //       'opacity': '1',
+      //       // 'visibility': 'visible'
+      //     });
+      //
+      //     loadedImgs++;
+      //     loadProgress();
+      //   }
+      // });
+
     }
 
 
